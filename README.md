@@ -22,6 +22,7 @@ Data Insights is a full-stack application that provides real-time data analysis 
 
 ### Frontend (`/src`)
 
+```path
 src/
 ├── app/ # Next.js app directory
 │ ├── page.tsx # Main application page
@@ -35,9 +36,11 @@ src/
 ├── hooks/ # Custom hooks
 ├── types/ # TypeScript types
 └── utils/ # Utility functions
+```
 
 ### Backend (`/backend`)
 
+```path
 backend/
 ├── app/
 │ ├── main.py # FastAPI application entry
@@ -45,6 +48,7 @@ backend/
 │ ├── services/ # Business logic
 │ ├── models/ # Data models
 │ └── utils/ # Helper functions
+```
 
 ## Getting Started
 
