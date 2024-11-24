@@ -1,40 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Data Insights - Interactive Data Analysis Platform
+
+## Overview
+Data Insights is a full-stack application that provides real-time data analysis and visualization capabilities. It features data quality assessment, statistical analysis, and interactive visualizations to help users better understand their datasets.
+
+## Features
+- File upload and processing
+- Data quality analysis
+- Statistical summaries
+- Missing value detection
+- Duplicate value analysis
+- Dark/Light mode toggle
+- Interactive visualizations
+- Real-time data processing
+
+## Tech Stack
+- **Frontend**: Next.js, TypeScript, TailwindCSS
+- **Backend**: FastAPI, Python, Pandas
+- **Data Processing**: NumPy, Pandas
+
+## Project Structure
+
+### Frontend (`/src`)
+
+src/
+├── app/ # Next.js app directory
+│ ├── page.tsx # Main application page
+│ └── layout.tsx # Root layout
+├── components/
+│ └── data-cleaning/ # Data analysis components
+│ ├── DataQuality.tsx
+│ ├── DatasetAnalysis.tsx
+│ └── DataQualityDashboard.tsx
+├── contexts/ # React contexts
+├── hooks/ # Custom hooks
+├── types/ # TypeScript types
+└── utils/ # Utility functions
+
+### Backend (`/backend`)
+
+backend/
+├── app/
+│ ├── main.py # FastAPI application entry
+│ ├── routers/ # API route handlers
+│ ├── services/ # Business logic
+│ ├── models/ # Data models
+│ └── utils/ # Helper functions
 
 ## Getting Started
 
-First, run the development server:
+### Backend Setup
 
+
+Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Gaurav-Wankhede/Data-Insights.git
+```
+```bash
+cd Data-Insights/backend
+```
+Create virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate # On Windows: .\venv\Scripts\activate
+```
+Install dependencies
+```bash
+pip install -r requirements.txt
+```
+Start the server
+```bash
+uvicorn app.main:app --reload --port 8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontend Setup
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+bash
+From project root
+```bash
+cd src
+```
+Install dependencies
+```bash
+npm install
+or
+yarn install
+or
+pnpm install
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Start development server
+```bash
+npm run dev
+or
+yarn dev
+or
+pnpm dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Backend (.env)
 
-## Learn More
+```env
+UPLOAD_DIR=data/uploads
+MAX_FILE_SIZE=10485760
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Frontend (.env.local)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_API_URL=http://localhost:8000
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+### Data Quality Analysis
+- Column-wise quality metrics
+- Missing value detection
+- Duplicate value identification
+- Data type consistency checks
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Statistical Analysis
+- Descriptive statistics
+- Distribution analysis
+- Correlation studies
+- Outlier detection
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## API Endpoints
+- `/api/v1/data/upload`: File upload endpoint
+- `/api/v1/analysis/quality/{dataset_id}`: Data quality analysis
+- `/api/v1/analysis/describe/{dataset_id}`: Statistical description
+- `/api/v1/analysis/columns/{dataset_id}`: Column information
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## License
+MIT License
+
+## Author
+Gaurav Wankhede
+
+## Acknowledgments
+- Next.js team for the amazing framework
+- FastAPI community for the robust backend framework
+- All contributors and users of the platform
