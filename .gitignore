@@ -44,3 +44,7 @@ next-env.d.ts
 /backend/data
 /backend/logs
 /backend/venv
+.venv
+venv
+/venv
+/.venv
